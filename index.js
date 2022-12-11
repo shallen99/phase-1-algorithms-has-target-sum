@@ -1,6 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for(let i=0; i<array.length; i++){
+    const complement = target - array[i];
+    // iterate over the remaining numbers in the array
+    for (let j = i + 1; j < array.length; j++) {
+      // check if any of the remaining numbers is the complement
+      // if so, return true
+      if (array[j] === complement) return true;
+    }
+  }
+  // if we reach the end of the array, return false
+  return false;
 }
+  
+
 
 /* 
   Write the Big O time complexity of your function here
